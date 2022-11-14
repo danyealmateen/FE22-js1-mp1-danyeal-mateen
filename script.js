@@ -1,65 +1,68 @@
-let headerOne = document.createElement("h1");
-let headerTwo = document.createElement("h2");
-let headerThree = document.createElement("h3");
-let headerFour = document.createElement("h4");
-let headerFive = document.createElement("h5");
+for (let i = 0; i < 6; i++) {
+  let generatedDiv = document.createElement("div");
+  document.body.appendChild(generatedDiv);
+  generatedDiv.innerText = "Rad" + i;
+  generatedDiv.style.textAlign = "center";
+  generatedDiv.style.fontSize = `${i * 5}px`;
+  generatedDiv.style.margin = "10px";
+  generatedDiv.style.backgroundColor = `hsla(${i}191, 63%, 50%)`;
+}
 
-document.body.appendChild(headerFive);
-document.body.appendChild(headerFour);
-document.body.appendChild(headerThree);
-document.body.appendChild(headerTwo);
-document.body.appendChild(headerOne);
-
-headerFive.innerText = "Rad1";
-headerFour.innerText = "Rad2";
-headerThree.innerText = "Rad3";
-headerTwo.innerText = "Rad4";
-headerOne.innerText = "Rad5";
-
-headerOne.style.textAlign = "center";
-headerOne.style.backgroundColor = "lightblue";
-headerTwo.style.textAlign = "center";
-headerTwo.style.backgroundColor = "lightblue";
-headerThree.style.textAlign = "center";
-headerThree.style.backgroundColor = "lightblue";
-headerFour.style.textAlign = "center";
-headerFour.style.backgroundColor = "lightblue";
-headerFive.style.textAlign = "center";
-headerFive.style.backgroundColor = "lightBlue";
+let divContainerOne = document.createElement("div");
+document.body.appendChild(divContainerOne);
+divContainerOne.style.margin = "10px";
+divContainerOne.style.height = "200px";
+divContainerOne.style.width = "75px";
+divContainerOne.style.backgroundColor = "purple";
+divContainerOne.style.padding = "15px";
 
 for (let i = 0; i < 10; i++) {
-  let numberDiv = document.createElement("div");
-  document.body.appendChild(numberDiv);
-  numberDiv.innerText += i;
-  numberDiv.style.position = 'relative';
-  numberDiv.style.left = '25rem'
-  numberDiv.style.top = '1.4rem'
-  console.log(i);
+  let para = document.createElement("p");
+  divContainerOne.append(para);
+  para.style.margin = "0";
+  para.append(i);
 
   if (i % 2 === 0) {
-    numberDiv.style.backgroundColor = "black";
-    numberDiv.style.color = "white";
-    numberDiv.style.width = "50px";
+    para.style.backgroundColor = "black";
+    para.style.color = "white";
+  } else {
+    para.style.backgroundColor = "white";
+    para.style.color = "black";
+  }
+
+  if (i === 4) {
+    para.style.backgroundColor = "transparent";
   }
 }
 
-for (let j = 10; j >= 0; j--) {
-  let divvy = document.createElement("div");
-  document.body.appendChild(divvy);
-  divvy.style.position = 'relative';
-  divvy.style.left = '30rem';
-  divvy.style.bottom = '10rem';
-  divvy.innerText += j;
-  console.log(j);
+let divContainerTwo = document.createElement("div");
+document.body.appendChild(divContainerTwo);
+divContainerTwo.style.margin = "10px";
+divContainerTwo.style.height = "200px";
+divContainerTwo.style.width = "75px";
+divContainerTwo.style.backgroundColor = "purple";
+divContainerTwo.style.padding = "15px";
 
-  if (j % 2 === 0) {
-    divvy.style.backgroundColor = "orange";
-    divvy.style.color = "green";
-    divvy.style.width = "50px";
+for (let i = 9; i >= 0; i--) {
+  let paraTwo = document.createElement("p");
+  divContainerTwo.append(paraTwo);
+  paraTwo.style.margin = "0";
+  paraTwo.append(i);
+
+  if (i % 2 === 0) {
+    paraTwo.style.backgroundColor = "black";
+    paraTwo.style.color = "white";
+  } else {
+    paraTwo.style.backgroundColor = "white";
+    paraTwo.style.color = "black";
+  }
+
+  if (i === 8) {
+    paraTwo.style.backgroundColor = "transparent";
   }
 }
 
-let myArray = [
+let theOneAndOnlyArray = [
   "ett",
   "två",
   "tre",
@@ -72,19 +75,39 @@ let myArray = [
   "tio",
 ];
 
-myArray.forEach((element, i) => {
-  let newDiv = document.createElement("div");
-  newDiv.style.position = 'relative';
-  newDiv.style.left = '35rem';
-  newDiv.style.bottom = '22.2rem';
-  document.body.appendChild(newDiv);
-  newDiv.innerText += element;
-  newDiv.style.backgroundColor = "red";
-  newDiv.style.width = "50px";
+let divContainerThree = document.createElement("div");
+document.body.appendChild(divContainerThree);
+divContainerThree.style.margin = "10px";
+divContainerThree.style.height = "200px";
+divContainerThree.style.width = "70px";
+divContainerThree.style.backgroundColor = "purple";
+divContainerThree.style.padding = "15px";
+
+theOneAndOnlyArray.forEach((arrayElement, i) => {
+  let paraThree = document.createElement("p");
+  divContainerThree.append(paraThree);
+  paraThree.append(arrayElement);
+  paraThree.style.margin = "0px";
 
   if (i % 2 === 0) {
-    newDiv.style.backgroundColor = "teal";
+    paraThree.style.backgroundColor = "black";
+    paraThree.style.color = "white";
   } else {
-    newDiv.style.backgroundColor = "gold";
+    paraThree.style.backgroundColor = "white";
+    paraThree.style.color = "black";
+  }
+
+  if (arrayElement === "sex") {
+    paraThree.style.backgroundColor = "transparent";
   }
 });
+
+let theMasterOfAllDivs = document.createElement("div");
+document.body.appendChild(theMasterOfAllDivs);
+theMasterOfAllDivs.append(divContainerOne, divContainerTwo, divContainerThree);
+theMasterOfAllDivs.style.display = "flex";
+theMasterOfAllDivs.style.alignItems = "center";
+theMasterOfAllDivs.style.justifyContent = "center";
+theMasterOfAllDivs.style.height = "500px";
+theMasterOfAllDivs.style.width = "500px";
+console.log(theMasterOfAllDivs);
